@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試網頁第四次作業學號末三碼八五六</title>
+    <style>
+        body {
+            font-family: '微軟正黑體', Arial, sans-serif; /* 添加中文字體 */
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 新的CSS样式 */
+        #imageDisplay {
+            text-align: center;
+            margin-top: 20px;
+            overflow: hidden; /* 隱藏溢出的内容 */
+        }
+
+        #imageDisplay img {
+            max-width: 100%; /* 圖片寬度最大為父元素寬度 */
+            display: block; /* 去除行内元素間的空白 */
+            margin: 0 auto; /* 左右居中 */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>測試網頁</h1>
+    </header>
+
+    <div class="container">
+        <h2>網頁内容</h2>
+        <p>這裡是408262856的簡單測試網頁，包含了一些基本的 HTML 和 CSS 和jQuary。</p>
+        
+        <!-- 上傳檔案按鈕 -->
+        <input type="file" id="fileInput">
+        <!-- 顯示選擇的圖片 -->
+        <div id="imageDisplay"></div>
+    </div>
+
+    <footer>
+        &copy; 2023 測試網頁
+    </footer>
+
+    <script>
+        // 使用jQuery來監聽文件輸入的變化
+        $("#fileInput").change(function() {
+            var file = this.files[0];
+            
+            if (file) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    // 在#imageDisplay區域顯示選取的圖片
+                    $("#imageDisplay").html("<img src='" + e.target.result + "' alt='選擇的圖片'>");
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
